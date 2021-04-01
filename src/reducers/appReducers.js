@@ -2,17 +2,17 @@ import { SEARCH, REFRESH } from '../actions/appActions';
 
 const stateObject = {
     city: '',
-    temperature: '',
+    temp: '',
     pressure: '',
     humidity: '',
 };
 
-const appReducer = (state = stateObject, action) => {
+export const appReducer = (state = stateObject, action) => {
     switch (action.type) {
     case SEARCH:
         return {
             city: action.payload.city,
-            temperature: action.payload.temperature,
+            temp: action.payload.temp,
             pressure: action.payload.pressure,
             humidity: action.payload.humidity,
         };
@@ -22,5 +22,3 @@ const appReducer = (state = stateObject, action) => {
         return state;
     }
 };
-
-export default appReducer;

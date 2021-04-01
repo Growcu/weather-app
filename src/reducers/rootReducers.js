@@ -2,8 +2,6 @@ import { combineReducers } from 'redux';
 
 import { appReducer } from './appReducers';
 
-const rootReducers = combineReducers({
-    city: appReducer,
+export const rootReducers = combineReducers({
+    cityData: appReducer,
 });
-
-export default rootReducers;

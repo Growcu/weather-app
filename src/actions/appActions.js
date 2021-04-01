@@ -2,12 +2,12 @@ export const SEARCH = 'SEARCH';
 export const REFRESH = 'REFRESH';
 
 export const search = ({
-    city, temperature, pressure, humidity,
+    city, temp, pressure, humidity,
 }) => ({
     type: SEARCH,
     payload: {
         city,
-        temperature,
+        temp,
         pressure,
         humidity,
     },
