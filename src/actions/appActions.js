@@ -1,21 +1,17 @@
-export const SEARCH = 'SEARCH';
-export const REFRESH = 'REFRESH';
+export const SEARCHCITY = 'SEARCHCITY';
+export const SEARCHLOCATION = 'SEARCHLOCATION';
 
-export const search = ({
-    city, temp, pressure, humidity,
-}) => ({
-    type: SEARCH,
+export const search = ({ city }) => ({
+    type: SEARCHCITY,
     payload: {
         city,
-        temp,
-        pressure,
-        humidity,
     },
 });
 
-export const refresh = ({ city }) => ({
-    type: REFRESH,
+export const searchLocation = ({ latitude, longitude }) => ({
+    type: SEARCHLOCATION,
     payload: {
-        city,
+        latitude,
+        longitude,
     },
 });

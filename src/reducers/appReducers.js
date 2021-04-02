@@ -1,4 +1,4 @@
-import { SEARCH, REFRESH } from '../actions/appActions';
+import { SEARCHLOCATION, SEARCHCITY } from '../actions/appActions';
 
 const stateObject = {
     city: '',
@@ -9,15 +9,20 @@ const stateObject = {
 
 export const appReducer = (state = stateObject, action) => {
     switch (action.type) {
-    case SEARCH:
+    case SEARCHCITY:
         return {
             city: action.payload.city,
             temp: action.payload.temp,
             pressure: action.payload.pressure,
             humidity: action.payload.humidity,
         };
-    case REFRESH:
-        return state;
+    case SEARCHLOCATION:
+        return {
+            city: action.payload.city,
+            temp: action.payload.temp,
+            pressure: action.payload.pressure,
+            humidity: action.payload.humidity,
+        };
     default:
         return state;
     }
