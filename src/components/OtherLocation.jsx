@@ -13,15 +13,9 @@ const CurrentLocation = () => {
     } = weatherData;
 
     const handleDownloadData = () => {
-        const newCity = {
-            city: cityInput,
-            temp: '',
-            pressure: '',
-            humidity: '',
-        };
+        const newCity = { city: cityInput };
         dispatch(search(newCity));
     };
-
     return (
         <div className="otherLocation">
             <h1>Inna lokalizacja</h1>
