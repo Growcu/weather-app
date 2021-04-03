@@ -9,13 +9,14 @@ const CurrentLocation = () => {
     const [cityInput, setCityInput] = useState('');
     const handleChangeCity = (event) => setCityInput(event.target.value);
     const {
-        city, time, temp, pressure, humidity,
+        city, time, temp, pressure, humidity, icon,
     } = weatherData;
 
     const handleDownloadData = () => {
         const newCity = { city: cityInput };
         dispatch(search(newCity));
     };
+    console.log(icon);
     return (
         <div className="otherLocation">
             <input type="text" value={cityInput} onChange={handleChangeCity} placeholder="City..." />
@@ -27,7 +28,7 @@ const CurrentLocation = () => {
                     <li>{temp}</li>
                     <li>{pressure}</li>
                     <li>{humidity}</li>
-                    <li>Ikona</li>
+                    <li><img src={`./icons/${icon}.png`} alt="icon" /></li>
                 </ul>
                 <button type="button">More...</button>
             </div>

@@ -10,7 +10,7 @@ const downloadDataMiddleware = () => (next) => async (action) => {
             .post(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=971d414e89f3c0b3df147fbb3ad30cb7`)
             .then((response) => {
                 const {
-                    main, dt, timezone, name,
+                    main, dt, timezone, name, weather,
                 } = response.data;
                 const {
                     temp,
@@ -25,6 +25,7 @@ const downloadDataMiddleware = () => (next) => async (action) => {
                     temp,
                     pressure,
                     humidity,
+                    icon: weather[0].icon,
                 };
             });
     } else if (action.type === SEARCHCITY) {
@@ -32,7 +33,9 @@ const downloadDataMiddleware = () => (next) => async (action) => {
         await axios
             .post(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=971d414e89f3c0b3df147fbb3ad30cb7`)
             .then((response) => {
-                const { main, dt, timezone } = response.data;
+                const {
+                    main, dt, timezone, weather,
+                } = response.data;
                 const {
                     temp,
                     pressure,
@@ -46,6 +49,7 @@ const downloadDataMiddleware = () => (next) => async (action) => {
                     temp,
                     pressure,
                     humidity,
+                    icon: weather[0].icon,
                 };
             });
     }

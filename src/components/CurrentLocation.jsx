@@ -10,7 +10,7 @@ const CurrentLocation = () => {
     const weatherData = useSelector((store) => store.cityData);
 
     const {
-        city, time, temp, pressure, humidity,
+        city, time, temp, pressure, humidity, icon,
     } = weatherData;
 
     const getLocation = () => {
@@ -44,7 +44,7 @@ const CurrentLocation = () => {
                     <li>{temp}</li>
                     <li>{pressure}</li>
                     <li>{humidity}</li>
-                    <li>Ikona</li>
+                    <li><img src={`./icons/${icon}.png`} alt="icon" /></li>
                 </ul>
                 <button type="button">More...</button>
             </div>

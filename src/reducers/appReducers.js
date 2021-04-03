@@ -17,6 +17,7 @@ export const appReducer = (state = stateObject, action) => {
             temp: action.payload.temp,
             pressure: action.payload.pressure,
             humidity: action.payload.humidity,
+            icon: action.payload.icon,
         };
     case SEARCHLOCATION:
         return {
@@ -25,6 +26,7 @@ export const appReducer = (state = stateObject, action) => {
             temp: action.payload.temp,
             pressure: action.payload.pressure,
             humidity: action.payload.humidity,
+            icon: action.payload.icon,
         };
     default:
         return state;
