@@ -6,28 +6,50 @@ const stateObject = {
     temp: '',
     pressure: '',
     humidity: '',
+    icon: '',
+    feelsLike: '',
+    tempMax: '',
+    tempMin: '',
+    speed: '',
 };
 
 export const appReducer = (state = stateObject, action) => {
-    switch (action.type) {
-    case SEARCHCITY:
+    const { type, payload } = action;
+    switch (type) {
+    case SEARCHCITY: {
+        const {
+            city, time, temp, pressure, humidity, icon, feelsLike, tempMax, tempMin, speed,
+        } = payload;
         return {
-            city: action.payload.city,
-            time: action.payload.time,
-            temp: action.payload.temp,
-            pressure: action.payload.pressure,
-            humidity: action.payload.humidity,
-            icon: action.payload.icon,
+            city,
+            time,
+            temp,
+            pressure,
+            humidity,
+            icon,
+            feelsLike,
+            tempMax,
+            tempMin,
+            speed,
         };
-    case SEARCHLOCATION:
+    }
+    case SEARCHLOCATION: {
+        const {
+            city, time, temp, pressure, humidity, icon, feelsLike, tempMax, tempMin, speed,
+        } = payload;
         return {
-            city: action.payload.city,
-            time: action.payload.time,
-            temp: action.payload.temp,
-            pressure: action.payload.pressure,
-            humidity: action.payload.humidity,
-            icon: action.payload.icon,
+            city,
+            time,
+            temp,
+            pressure,
+            humidity,
+            icon,
+            feelsLike,
+            tempMax,
+            tempMin,
+            speed,
         };
+    }
     default:
         return state;
     }
