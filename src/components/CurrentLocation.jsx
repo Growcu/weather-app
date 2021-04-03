@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /* eslint-disable no-useless-catch */
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -9,7 +10,7 @@ const CurrentLocation = () => {
     const weatherData = useSelector((store) => store.cityData);
 
     const {
-        city, temp, pressure, humidity,
+        city, time, temp, pressure, humidity,
     } = weatherData;
 
     const getLocation = () => {
@@ -20,7 +21,6 @@ const CurrentLocation = () => {
                         latitude: position.coords.latitude,
                         longitude: position.coords.longitude,
                     };
-                    console.log('zapytanie');
                     dispatch(searchLocation(location));
                 });
             } catch (err) {
@@ -40,7 +40,7 @@ const CurrentLocation = () => {
             <div className="weatherDataWrapper">
                 <ul className="weatherDataList">
                     <li>{city}</li>
-                    <li>Time</li>
+                    <li>{time}</li>
                     <li>{temp}</li>
                     <li>{pressure}</li>
                     <li>{humidity}</li>

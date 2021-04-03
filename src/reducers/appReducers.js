@@ -2,6 +2,7 @@ import { SEARCHLOCATION, SEARCHCITY } from '../actions/appActions';
 
 const stateObject = {
     city: '',
+    time: '',
     temp: '',
     pressure: '',
     humidity: '',
@@ -12,6 +13,7 @@ export const appReducer = (state = stateObject, action) => {
     case SEARCHCITY:
         return {
             city: action.payload.city,
+            time: action.payload.time,
             temp: action.payload.temp,
             pressure: action.payload.pressure,
             humidity: action.payload.humidity,
@@ -19,6 +21,7 @@ export const appReducer = (state = stateObject, action) => {
     case SEARCHLOCATION:
         return {
             city: action.payload.city,
+            time: action.payload.time,
             temp: action.payload.temp,
             pressure: action.payload.pressure,
             humidity: action.payload.humidity,

@@ -9,7 +9,7 @@ const CurrentLocation = () => {
     const [cityInput, setCityInput] = useState('');
     const handleChangeCity = (event) => setCityInput(event.target.value);
     const {
-        city, temp, pressure, humidity,
+        city, time, temp, pressure, humidity,
     } = weatherData;
 
     const handleDownloadData = () => {
@@ -18,13 +18,19 @@ const CurrentLocation = () => {
     };
     return (
         <div className="otherLocation">
-            <h1>Inna lokalizacja</h1>
             <input type="text" value={cityInput} onChange={handleChangeCity} placeholder="City..." />
-            <p>{city}</p>
-            <p>{temp}</p>
-            <p>{pressure}</p>
-            <p>{humidity}</p>
             <button type="button" onClick={handleDownloadData}>Znajdz</button>
+            <div className="weatherDataWrapper">
+                <ul className="weatherDataList">
+                    <li>{city}</li>
+                    <li>{time}</li>
+                    <li>{temp}</li>
+                    <li>{pressure}</li>
+                    <li>{humidity}</li>
+                    <li>Ikona</li>
+                </ul>
+                <button type="button">More...</button>
+            </div>
         </div>
     );
 };
