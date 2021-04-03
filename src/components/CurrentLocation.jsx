@@ -1,17 +1,16 @@
 /* eslint-disable no-undef */
 /* eslint-disable no-useless-catch */
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React, { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
 
 import { searchLocation } from '../actions/appActions';
+import BasicsInfo from './basicsInfo';
+import MoreInfo from './moreInfo';
 
 const CurrentLocation = () => {
     const dispatch = useDispatch();
-    const weatherData = useSelector((store) => store.cityData);
 
-    const {
-        city, time, temp, pressure, humidity, icon,
-    } = weatherData;
+    const [isVisible, setIsVisible] = useState(false);
 
     const getLocation = () => {
         if ('geolocation' in navigator) {
@@ -31,6 +30,8 @@ const CurrentLocation = () => {
         }
     };
 
+    const handleShowMore = () => setIsVisible(!isVisible);
+
     useEffect(() => (
         getLocation()
     ), []);
@@ -38,15 +39,8 @@ const CurrentLocation = () => {
     return (
         <div className="currentLocation">
             <div className="weatherDataWrapper">
-                <ul className="weatherDataList">
-                    <li>{city}</li>
-                    <li>{time}</li>
-                    <li>{temp}</li>
-                    <li>{pressure}</li>
-                    <li>{humidity}</li>
-                    <li><img src={`./icons/${icon}.png`} alt="icon" /></li>
-                </ul>
-                <button type="button">More...</button>
+                {isVisible ? <MoreInfo /> : <BasicsInfo />}
+                <button type="button" onClick={handleShowMore}>More...</button>
             </div>
         </div>
     );
