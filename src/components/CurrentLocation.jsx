@@ -2,6 +2,7 @@
 /* eslint-disable no-useless-catch */
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router';
 
 import { searchLocation } from '../actions/appActions';
 import BasicsInfo from './basicsInfo';
@@ -9,22 +10,22 @@ import MoreInfo from './moreInfo';
 
 const CurrentLocation = () => {
     const dispatch = useDispatch();
+    const history = useHistory();
 
     const [isVisible, setIsVisible] = useState(false);
 
     const getLocation = () => {
-        if ('geolocation' in navigator) {
-            try {
-                navigator.geolocation.getCurrentPosition((position) => {
-                    const location = {
-                        latitude: position.coords.latitude,
-                        longitude: position.coords.longitude,
-                    };
-                    dispatch(searchLocation(location));
-                });
-            } catch (err) {
-                throw err;
-            }
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition((position) => {
+                const location = {
+                    latitude: position.coords.latitude,
+                    longitude: position.coords.longitude,
+                };
+                dispatch(searchLocation(location));
+            }, () => {
+                alert('Brak mozliwosci lokalizacji urzadzenia. Pracujemy nad tym');
+                history.push('/otherLocation');
+            });
         } else {
             alert('Brak mozliwosci lokalizacji');
         }

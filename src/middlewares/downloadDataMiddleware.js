@@ -12,7 +12,7 @@ const downloadDataMiddleware = () => (next) => async (action) => {
         const {
             temp, pressure, humidity, feels_like, temp_max, temp_min,
         } = main;
-        const { speed } = wind.speed;
+        const { speed } = wind;
         const { icon } = weather[0];
 
         const time = timeReader(dt, timezone);
