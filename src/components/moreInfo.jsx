@@ -10,13 +10,13 @@ const moreInfo = () => {
         <ul className="weatherDataList">
             <li>{city}</li>
             <li>{time}</li>
-            <li>{temp}</li>
-            <li>{pressure}</li>
-            <li>{tempMax}</li>
-            <li>{humidity}</li>
-            <li>{tempMin}</li>
-            <li>{speed}</li>
-            <li>{feelsLike}</li>
+            <li>{`${temp}°C`}</li>
+            <li>{`${pressure}hPa`}</li>
+            <li>{`${tempMax}°C`}</li>
+            <li>{`${humidity}%`}</li>
+            <li>{`${tempMin}°C`}</li>
+            <li>{`${speed}km/h`}</li>
+            <li>{`${feelsLike}°C`}</li>
             <li><img src={`./icons/${icon}.png`} alt="icon" /></li>
         </ul>
     );

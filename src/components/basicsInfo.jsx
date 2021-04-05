@@ -10,9 +10,9 @@ const basicsInfo = () => {
         <ul className="weatherDataList">
             <li>{city}</li>
             <li>{time}</li>
-            <li>{temp}</li>
-            <li>{pressure}</li>
-            <li>{humidity}</li>
+            <li>{`${temp}°C`}</li>
+            <li>{`${pressure}hPa`}</li>
+            <li>{`${humidity}%`}</li>
             <li><img src={`./icons/${icon}.png`} alt="icon" /></li>
         </ul>
     );
