@@ -6,19 +6,26 @@ import '../styles/MoreInfo.scss';
 const moreInfo = () => {
     const weatherData = useSelector((store) => store.cityData);
     const {
-        city, time, temp, pressure, humidity, icon, feelsLike, tempMax, tempMin, speed,
+        city, time, pressure, humidity, icon,
     } = weatherData;
+
+    const temp = Math.floor(weatherData.temp);
+    const tempMax = Math.floor(weatherData.tempMax);
+    const tempMin = Math.floor(weatherData.tempMin);
+    const feelsLike = Math.floor(weatherData.feelsLike);
+    const speed = Math.floor(weatherData.speed);
+
     return (
         <ul className="weatherDataListMore">
             <li className="city">{city}</li>
             <li className="time">{time}</li>
             <li className="temp">{`${temp}°C`}</li>
             <li className="pressure">{`${pressure}hPa`}</li>
-            <li className="tempMax">{`${tempMax}°C`}</li>
+            <li className="tempMax">{`Max: ${tempMax}°C`}</li>
             <li className="humidity">{`${humidity}%`}</li>
-            <li className="tempMin">{`${tempMin}°C`}</li>
-            <li className="speed">{`${speed}km/h`}</li>
-            <li className="feelsLike">{`${feelsLike}°C`}</li>
+            <li className="tempMin">{`Min: ${tempMin}°C`}</li>
+            <li className="speed">{`Wind: ${speed}km/h`}</li>
+            <li className="feelsLike">{`Feels: ${feelsLike}°C`}</li>
             <li className="icon"><img src={`./icons/${icon}.png`} alt="icon" /></li>
         </ul>
     );
