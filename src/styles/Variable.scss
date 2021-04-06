@@ -1,7 +1,12 @@
 $app-color: rgb(115, 0, 186);
-$app-color-gradient: inear-gradient(135deg, rgba(115, 0, 186, 1) 0%, rgba(241, 70, 252, 1) 100%);
+$app-color-gradient: linear-gradient(135deg, rgba(115, 0, 186, 1) 0%, rgba(241, 70, 252, 1) 100%);
+$button-boxshadow-color: rgba(241, 70, 252, 1);
+$buttonMore-boxshadow-color: rgb(115, 0, 186);
+$button-font-color: rgb(115, 0, 186);
+$button-font-size: 0.7em;
+$find-button-color: white;
 $info-font-size: 1.5em;
-$temp-font-size: 3.5em;
 $nav-font-size: 1.2em;
 $nav-color: rgba(241, 70, 252, .6);
 $nav-boxshadow-color: rgba(241, 70, 252, 1);
+$temp-font-size: 3.5em;
