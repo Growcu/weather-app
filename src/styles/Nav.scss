@@ -1,8 +1,10 @@
+@import './Variable.scss';
+
 .nav {
     flex-basis: 8%;
     width: 100%;
-    box-shadow: 0 0 10px 1px rgba(241, 70, 252, 1);
-    background-color: rgba(241, 70, 252, .6);
+    box-shadow: 0 0 10px 1px $nav-boxshadow-color;
+    background-color: $nav-color;
 
     .nav_list {
         height: 100%;
@@ -15,6 +17,7 @@
         .nav_item {
             text-decoration: none;
             font-weight: 700;
+            font-size: $nav-font-size;
             color: white;
         }
     }

@@ -1,3 +1,5 @@
+@import './Variable.scss';
+
 .weatherDataListMore {
     flex-basis: 80%;
     max-height: 85%;
@@ -11,12 +13,12 @@
     .city,
     .time {
         flex-basis: 100%;
-        font-size: 1.5em;
+        font-size: $info-font-size;
     }
 
     .temp {
         flex-basis: 100%;
-        font-size: 3.5em;
+        font-size: $temp_font-size;
     }
 
     .pressure,
@@ -26,7 +28,7 @@
     .speed,
     .feelsLike {
         flex-basis: 50%;
-        font-size: 1.5em;
+        font-size: $info-font-size;
     }
 
     .icon {
