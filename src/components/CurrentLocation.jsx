@@ -8,6 +8,8 @@ import { searchLocation } from '../actions/appActions';
 import BasicsInfo from './basicsInfo';
 import MoreInfo from './moreInfo';
 
+import '../styles/CurrentLocation.scss';
+
 const CurrentLocation = () => {
     const dispatch = useDispatch();
     const history = useHistory();

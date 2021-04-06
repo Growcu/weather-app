@@ -1,19 +1,21 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
+import '../styles/BasicsInfo.scss';
+
 const basicsInfo = () => {
     const weatherData = useSelector((store) => store.cityData);
     const {
         city, time, temp, pressure, humidity, icon,
     } = weatherData;
     return (
-        <ul className="weatherDataList">
-            <li>{city}</li>
-            <li>{time}</li>
-            <li>{`${temp}°C`}</li>
-            <li>{`${pressure}hPa`}</li>
-            <li>{`${humidity}%`}</li>
-            <li><img src={`./icons/${icon}.png`} alt="icon" /></li>
+        <ul className="weatherDataListBasics">
+            <li className="city">{city}</li>
+            <li className="time">{time}</li>
+            <li className="temp">{`${temp}°C`}</li>
+            <li className="pressure">{`${pressure}hPa`}</li>
+            <li className="humidity">{`${humidity}%`}</li>
+            <li className="icon"><img src={`./icons/${icon}.png`} alt="icon" /></li>
         </ul>
     );
 };

@@ -5,6 +5,8 @@ import { search } from '../actions/appActions';
 import BasicsInfo from './basicsInfo';
 import MoreInfo from './moreInfo';
 
+import '../styles/OtherLocation.scss';
+
 const CurrentLocation = () => {
     const dispatch = useDispatch();
     const [cityInput, setCityInput] = useState('');
@@ -19,8 +21,10 @@ const CurrentLocation = () => {
     };
     return (
         <div className="otherLocation">
-            <input type="text" value={cityInput} onChange={handleChangeCity} placeholder="City..." />
-            <button type="button" onClick={handleDownloadData}>Znajdz</button>
+            <div className="find">
+                <input type="text" value={cityInput} onChange={handleChangeCity} placeholder="City..." />
+                <button type="button" onClick={handleDownloadData}>Znajdz</button>
+            </div>
             <div className="weatherDataWrapper">
                 {isVisible ? <MoreInfo /> : <BasicsInfo />}
                 <button type="button" onClick={handleShowMore}>More...</button>
