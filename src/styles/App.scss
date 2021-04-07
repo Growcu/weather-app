@@ -11,3 +11,9 @@
     text-align: center;
     overflow: hidden;
 }
+
+@media (min-width: 1024px) {
+    html {
+        font-size: 24px;
+    }
+}
