@@ -31,3 +31,34 @@
         }
     }
 }
+
+@media (orientation: landscape) {
+    .weatherDataListBasics {
+        flex-basis: 75%;
+        max-height: 80%;
+        flex-wrap: wrap;
+        padding-top: 2%;
+
+        .city,
+        .time,
+        .pressure,
+        .humidity {
+            flex-basis: 10%;
+            font-size: $info-font-size;
+        }
+
+        .temp {
+            flex-basis: 10%;
+            font-size: $temp-font-size;
+        }
+
+        .icon {
+            flex-basis: 50%;
+            max-width: 40%;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+}

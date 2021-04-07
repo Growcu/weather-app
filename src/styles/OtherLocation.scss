@@ -61,3 +61,24 @@
         }
     }
 }
+
+@media (orientation: landscape) {
+    .otherLocation {
+        align-items: center;
+        max-height: 90vh;
+
+        .find {
+            width: 60%;
+            flex-basis: 8vh;
+
+        }
+
+        .weatherDataWrapper {
+            width: 100%;
+
+            button {
+                width: 15%;
+            }
+        }
+    }
+}

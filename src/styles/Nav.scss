@@ -22,3 +22,9 @@
         }
     }
 }
+
+@media (orientation:landscape) {
+    .nav {
+        flex-basis: 10%;
+    }
+}

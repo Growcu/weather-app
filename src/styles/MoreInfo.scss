@@ -40,3 +40,15 @@
         }
     }
 }
+
+@media (orientation: landscape) {
+    .weatherDataListMore {
+        flex-basis: 75%;
+        max-height: 80%;
+
+        .icon {
+            margin-top: -15%;
+            max-width: 20%;
+        }
+    }
+}
