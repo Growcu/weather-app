@@ -15,7 +15,7 @@ const App = () => (
             <BrowserRouter>
                 <Nav />
                 <Switch>
-                    <Route path="/currentLocation" exact component={CurrentLocation} />
+                    <Route path="/" exact component={CurrentLocation} />
                     <Route path="/otherLocation" exact component={OtherLocation} />
                 </Switch>
             </BrowserRouter>
