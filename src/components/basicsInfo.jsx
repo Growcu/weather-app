@@ -23,6 +23,6 @@ const basicsInfo = () => {
             </ul>
         );
     }
-    return <p> </p>;
+    return <h2>Write city name</h2>;
 };
 export default basicsInfo;
